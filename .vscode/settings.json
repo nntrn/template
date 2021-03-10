@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    // "/path/to/hide": true,
+  },
+  "markdown.extension.print.onFileSave": true,
+  "prettier.printWidth": 120
+}
