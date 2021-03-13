@@ -3,5 +3,15 @@
     // "/path/to/hide": true,
   },
   "markdown.extension.print.onFileSave": true,
-  "prettier.printWidth": 120
+  "prettier.printWidth": 120,
+  "workbench.colorCustomizations": {
+    "gitDecoration.addedResourceForeground": "#28a745",
+    "gitDecoration.conflictingResourceForeground": "#e36209",
+    "gitDecoration.deletedResourceForeground": "#d73a49",
+    "gitDecoration.ignoredResourceForeground": "#7f8183",
+    "gitDecoration.modifiedResourceForeground": "#1876e0",
+    "gitDecoration.stageModifiedResourceForeground": "#1876e0",
+    "gitDecoration.submoduleResourceForeground": "#652d90",
+    "gitDecoration.untrackedResourceForeground": "#28a745"
+  }
 }
