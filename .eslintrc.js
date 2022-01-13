@@ -1,14 +1,14 @@
-const declarations = ['const', 'let', 'var', 'import']
+const JS_DECLARATIONS = ['const', 'let', 'var', 'import']
 
 module.exports = {
+  root: true,
   env: {
     browser: true,
     commonjs: true,
-    es6: true,
     node: true
   },
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -17,13 +17,8 @@ module.exports = {
       experimentalObjectRestSpread: true,
     }
   },
-  root: true,
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
+  ignorePatterns: [ '**/out/*.js', '**/vendor/*.js', '**/dist/*.js'],
   rules: {
-    'array-bracket-spacing': ['error', 'never'],
     'arrow-spacing': ['error', { before: true, after: true }],
     'block-spacing': ['error', 'always'],
     'brace-style': 0,
@@ -49,10 +44,10 @@ module.exports = {
       { blankLine: 'any', prev: 'block-like', next: '*' },
       { blankLine: 'always', prev: 'multiline-expression', next: '*' },
       { blankLine: 'any', prev: '*', next: ['multiline-expression', 'expression']},
-      { blankLine: 'never', prev: [...declarations], next: [...declarations]},
-      { blankLine: 'any', prev: [...declarations], next: '*' },
-      { blankLine: 'always', prev: [...declarations], next: ['function', 'class']},
-      { blankLine: 'any', prev: '*', next: [...declarations]},
+      { blankLine: 'never', prev: JS_DECLARATIONS, next: JS_DECLARATIONS },
+      { blankLine: 'any', prev: JS_DECLARATIONS, next: '*' },
+      { blankLine: 'always', prev: JS_DECLARATIONS, next: ['function', 'class']},
+      { blankLine: 'any', prev: '*', next: JS_DECLARATIONS },
       { blankLine: 'any', prev: '*', next: 'return' },
       { blankLine: 'always', prev: '*', next: 'multiline-const' },
       { blankLine: 'always', prev: 'multiline-const', next: '*' },
@@ -75,5 +70,5 @@ module.exports = {
     'switch-colon-spacing': ['error', { after: true, before: false }],
     'template-curly-spacing': ['error', 'never'],
     'template-tag-spacing': ['error', 'always'],
-  },
+  }
 }
